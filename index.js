@@ -1,3 +1,4 @@
+
 var users = [
     {
         username: "admin",
@@ -27,6 +28,27 @@ function register(username, password){
             password: password
         })
         alert("User registered with username: " + username);
+    }
+})
+
+// clickevent for logging in
+var loginBtn = document.getElementById("loginBtn").addEventListener("click",
+function login(username, password){
+    username = document.getElementById("inputUsername").value;
+    password = document.getElementById("inputPassword").value;
+    this.username = username;
+    this.password = password;
+    // logic to check if user already exists
+    let exists = false;
+    for(i = 0; i < users.length; i++){
+        if(users[i].username === username && users[i].password === password){
+            exists = true;
+        } 
+    }
+    if(!exists){
+        alert("Wrong username or password");
+    }else if(exists){
+        alert("welcome: " + username) + "!";
     }
 })
 
