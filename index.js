@@ -48,7 +48,8 @@ function login(username, password){
     if(!exists){
         alert("Wrong username or password");
     }else if(exists){
-        alert("welcome: " + username) + "!";
+        window.location.pathname = "loggedIn.html";
+        document.getElementById("overhead").innerHTML = username;
     }
 })
 
